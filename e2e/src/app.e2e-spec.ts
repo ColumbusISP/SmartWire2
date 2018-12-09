@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('test-ng7 App', () => {
+describe('SmartWire App', () => {
   let page: AppPage;
 
   beforeEach(() => {
