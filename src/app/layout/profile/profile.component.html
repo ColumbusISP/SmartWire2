@@ -1,0 +1,34 @@
+<H2>
+    Customer Profile
+  </H2>
+   <H3>
+    Update your customer profile
+   </H3>
+  <!-- <ng-form #myForm="ngForm"> -->
+    <form #profileForm >
+  
+   <!-- <div class="alert alert-info" *ngIf="error">{{error}}</div> -->
+  <div *ngIf="submitted">Changes Submitted.</div>
+  <div *ngIf="submitted==false">
+  
+  <div>
+    <label>First Name: 
+      <input type="text" [(ngModel)]="profile.firstname" class="form-control" id="firstname" value = "{{profile.firstname}}" required name="firstname" #firstname> 
+    </label>
+  </div>
+  <div>
+    <label>Last Name: 
+      <input type="text" [(ngModel)]="profile.lastname" class="form-control" id="lastname" value = "{{profile.lastname}}" required name="lastname" #lastname>
+    </label>
+    
+  </div>
+  <div>
+    <label>EMail: 
+      <input type="text" [(ngModel)]="profile.email" class="form-control" id="email" value = "{{profile.email}}" required name="email" #email> 
+    </label>
+  </div>
+  <div>
+  <button type="button" class="btn btn-dark" (click)="update()" [disabled]="profileForm.invalid">Update</button>
+</div> 
+</div>
+  </form>

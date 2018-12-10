@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/services/auth/login.service';
+import { ProfileService } from '../../../services/customer/profile';
+import { Profile } from '../../../models/profile';
 
 @Component({
     selector: 'app-header',
@@ -10,12 +12,18 @@ import { LoginService } from 'src/app/services/auth/login.service';
 })
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
+    profile = new Profile();
+    currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     constructor(private translate: TranslateService, 
         public router: Router,
-        private loginService: LoginService
-        ) {
-
+        private loginService: LoginService,
+        private profileService: ProfileService) {
+        
+        this.profileService.getCustomer(this.currentUser.id)
+            .subscribe(profile => {
+                this.profile = profile; });
+  
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();

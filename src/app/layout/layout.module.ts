@@ -7,14 +7,18 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         LayoutRoutingModule,
         TranslateModule,
         NgbDropdownModule
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent]
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, ProfileComponent]
 })
 export class LayoutModule {}
