@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   public error: String = '';
   public vurl = API_URL + '/api/login';
   public rtrnCode: any;
+  public clicked: any;
 
 constructor(
     public http: HttpClient,
@@ -35,38 +36,44 @@ constructor(
 
     ngOnInit() {
       this.loginService.logout();
-      
       // Deep linking Support
       // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
       this.returnUrl = 'home';
-
+      this.clicked = false;
     }
 
     onLoggedin() {
         localStorage.setItem('isLoggedin', 'true');
     }
     public login(username: string, password: string): void {
+        this.clicked = true;
+        this.error = '';
         username = username.trim();
         password = password.trim();
-        if (!username) { return; }
-        if (!password) { return; }
+        if (!username) { this.clicked = false; return; }
+        if (!password) { this.clicked = false; return; }
 
         const newtmpUser: User = { username , password } as User;
         this.loginService.loginUser(newtmpUser)
           .subscribe(
             (tmpUser) => {
               const obj = JSON.parse(JSON.stringify(tmpUser));
-              console.debug('User Log in response: ' + JSON.stringify(obj));
+              console.log('User Log in response: ' + JSON.stringify(obj));
 
               if (obj.returnstatus <= 2) {
                 this.router.navigate([this.returnUrl]);
+                this.clicked = false;
 
-              } else { this.error = obj.message; }
-
+              } else { this.error = obj.eventmessage; 
+                console.log('Error:' + this.error);
+                this.clicked = false;
+              }
             },
           error => {
             this.error = error;
+            
           }
           );
+          
     }
 }

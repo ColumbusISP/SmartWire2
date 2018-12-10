@@ -13,10 +13,15 @@
                         <input type="password" #password class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
                     </div>
                 </div>
-                <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="login(username.value, password.value); password.value=''">{{ 'Log in' | translate }}</a> -->
-                <a class="btn rounded-btn" (click)="login(username.value, password.value); password.value=''">{{ 'Log in' | translate }}</a>
-                &nbsp;
-                <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
+                <span *ngIf="clicked != true">
+                    <a class="btn rounded-btn" (click)="login(username.value, password.value); password.value=''">{{ 'Log in' | translate }}</a>
+                    &nbsp;
+                    <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
+                </span>
+                <div>{{error}}</div>
+                <span *ngIf="clicked == true" >
+                    <i class="fa fa-spinner fa-spin" style="font-size:36px"></i>
+                </span>
             </form>
         </div>
     </div>

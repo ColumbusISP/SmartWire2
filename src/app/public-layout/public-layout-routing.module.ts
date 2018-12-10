@@ -7,7 +7,6 @@ const routes: Routes = [
         path: '',
         component: PublicLayoutComponent,
         children: [
-            { path: '', redirectTo: 'public-blank-page', pathMatch: 'prefix' },
             { path: 'public-blank-page', loadChildren: './public-blank-page/public-blank-page.module#PublicBlankPageModule' }
         ]
     }
