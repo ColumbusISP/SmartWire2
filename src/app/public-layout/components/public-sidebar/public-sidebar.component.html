@@ -1,95 +1,84 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
     <div class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a routerLink="/public-blank-page" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-home"></i>&nbsp;
-            <span>{{ 'Dashboard' | translate }}</span>
+            <span>Home</span>
         </a>
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <i class="fa fa-plus"></i>&nbsp;
-                <span>{{ 'Menu' | translate }}</span>
-            </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa angle-right"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div>
-        <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('account')">
-                <i class="fa fa-plus"></i>&nbsp;
+            <a class="list-group-item" (click)="addExpandClass('services')" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="fa fa-tasks fa-fw"></i>&nbsp;
                 <span>Services</span>
             </a>
-            <li class="nested" [class.expand]="showMenu === 'account'">
+            <li class="nested" [class.expand]="showMenu === 'services'">
                 <ul class="submenu">
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Account Overview</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Internet</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Current Bill</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Video</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Previous Bills</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Telephone</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Payments</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Security</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Environment</span></a>
                     </li>
                 </ul>
             </li>
         </div>
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('network')">
-                <i class="fa fa-plus"></i>&nbsp;
+            <a class="list-group-item" (click)="addExpandClass('technology')">
+                <i class="fa fa-sitemap fa-fw"></i>&nbsp;
                 <span>Technology</span>
             </a>
-            <li class="nested" [class.expand]="showMenu === 'network'">
+            <li class="nested" [class.expand]="showMenu === 'technology'">
                 <ul class="submenu">
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Current Plan</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Fiber Core</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Performance</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Telematics</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Audit Performance</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Cloud Services</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Outages</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Privacy and Security</span></a>
                     </li>
                     
                 </ul>
             </li>
         </div>
         <div class="nested-menu">
-                <a class="list-group-item" (click)="addExpandClass('services')">
-                    <i class="fa fa-plus"></i>&nbsp;
-                    <span>Experience</span>
-                </a>
-                <li class="nested" [class.expand]="showMenu === 'services'">
-                    <ul class="submenu">
-                        <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Internet</span></a>
-                        </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Video</span></a>
-                        </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Phone</span></a>
-                        </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Security</span></a>
-                        </li>
-                        <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Environment</span></a>
-                        </li>
-                        
-                    </ul>
-                </li>
-            </div>
+            <a class="list-group-item" (click)="addExpandClass('experience')">
+                <i class="fa fa-fw fa-bookmark"></i>&nbsp;
+                <span>Experience</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'experience'">
+                <ul class="submenu">
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>The Leading Edge</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Exceptional Service</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>The Way You Want It</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Digital Experience</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('about')">
+                <i class="fa fa-fw fa-th-list"></i>&nbsp;
+                <span>About</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'about'">
+                <ul class="submenu">
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Who We Are</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Our History</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Our Mission</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Our Commitment</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
         <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-o"></i>&nbsp;
             <span>{{ 'Blank Page' | translate }}</span>

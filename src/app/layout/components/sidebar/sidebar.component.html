@@ -5,36 +5,8 @@
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <i class="fa fa-fw fa-plus"></i>&nbsp;
-                <span>{{ 'Menu' | translate }}</span>
-            </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-fw fa-angle-right"></i>
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div>
-        <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('account')">
-                <i class="fa fa-fw fa-plus"></i>&nbsp;
+                <i class="fa fa-fw fa-id-card-o"></i>&nbsp;
                 <span>Account</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'account'">
@@ -52,7 +24,7 @@
         </div>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('network')">
-                <i class="fa fa-fw fa-plus"></i>&nbsp;
+                <i class="fa fa-fw fa-sitemap"></i>&nbsp;
                 <span>Network</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'network'">
@@ -71,7 +43,7 @@
         </div>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('services')">
-                <i class="fa fa-fw fa-plus"></i>&nbsp;
+                <i class="fa fa-fw fa-tasks"></i>&nbsp;
                 <span>Services</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'services'">
@@ -92,7 +64,7 @@
         </div>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('profile')">
-                <i class="fa fa-fw fa-plus"></i>&nbsp;
+                <i class="fa fa-fw fa-user"></i>&nbsp;
                 <span>Profile</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'profile'">
@@ -101,7 +73,21 @@
                     </li>
                     <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Payment Infomration</span></a>
                     </li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Notifications Preferences</span></a>
+                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Notifications</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('security')">
+                <i class="fa fa-fw fa-lock"></i>&nbsp;
+                <span>Security</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'security'">
+                <ul class="submenu">
+                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Update Password</span></a>
+                    </li>
+                    <li><a href="javascript:void(0)"><i class="fa fa-monument"></i>&nbsp; <span>Update Security Questions</span></a>
                     </li>
                 </ul>
             </li>

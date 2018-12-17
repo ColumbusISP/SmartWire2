@@ -4,10 +4,8 @@
    <H3>
     Update your customer profile
    </H3>
-  <!-- <ng-form #myForm="ngForm"> -->
     <form #profileForm >
   
-   <!-- <div class="alert alert-info" *ngIf="error">{{error}}</div> -->
   <div *ngIf="submitted">Changes Submitted.</div>
   <div *ngIf="submitted==false">
   
@@ -23,8 +21,7 @@
     
   </div>
   <div>
-    <label>EMail: 
-      <input type="text" [(ngModel)]="profile.email" class="form-control" id="email" value = "{{profile.email}}" required name="email" #email> 
+    <label>EMail: <input type="text" [(ngModel)]="profile.email" class="form-control" id="email" value = "{{profile.email}}" required name="email" #email> 
     </label>
   </div>
   <div>
