@@ -13,6 +13,8 @@ const API_URL = environment.apiUrl;
 export class LoginService {
     private handleError: HandleError;
     vurl = API_URL + '/api/authenticate';
+    public rtrnObject: any;
+    
     
   constructor(
       private http: HttpClient,
@@ -20,6 +22,7 @@ export class LoginService {
       httpErrorHandler: HttpErrorHandler) {
       this.handleError = httpErrorHandler.createHandleError('LoginService');
     }
+
   loginUser(tmpUser: User) {
     return this.http.post<any>(this.vurl, tmpUser)
         .pipe(

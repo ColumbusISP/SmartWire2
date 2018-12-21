@@ -21,18 +21,20 @@ export class LoginComponent implements OnInit {
   public vurl = API_URL + '/api/login';
   public rtrnCode: any;
   public clicked: any;
+  public rtrnUser: any;
 
 constructor(
     public http: HttpClient,
     public loginService: LoginService,
     private translate: TranslateService,
     public router: Router
+    
     ) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
         this.translate.use(browserLang.match(/en|fr|ur|es|it|fa|de|zh-CHS/) ? browserLang : 'en');
-}
+      }
 
     ngOnInit() {
       this.loginService.logout();
@@ -48,8 +50,10 @@ constructor(
     public login(username: string, password: string): void {
         this.clicked = true;
         this.error = '';
+       
         username = username.trim();
         password = password.trim();
+
         if (!username) { this.clicked = false; return; }
         if (!password) { this.clicked = false; return; }
 
@@ -62,8 +66,7 @@ constructor(
 
               if (obj.returnstatus <= 2) {
                 this.router.navigate([this.returnUrl]);
-                this.clicked = false;
-
+                
               } else { this.error = obj.eventmessage; 
                 console.log('Error:' + this.error);
                 this.clicked = false;
