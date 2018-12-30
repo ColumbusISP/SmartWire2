@@ -1,41 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+
+
 import { Observable } from 'rxjs';
 import { Profile } from '../../models/profile';
 import { environment } from '../../../environments/environment';
-import { map } from 'rxjs/operators';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
-import { catchError } from 'rxjs/operators';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 const API_URL = environment.apiUrl;
-
 @Injectable({
   providedIn: 'root'
 })
+
+@Injectable()
 export class ProfileService {
-  private handleError: HandleError;
     private vurl = API_URL + '/api/customer';
-    constructor( 
-    private http: HttpClient
-  ) { }
+    constructor( private http: HttpClient) { 
 
-  getCustomer(id: number): Observable<Profile> {
-    const url = this.vurl+'/'+id;
-    //return this.http.post<any>(this.vurl, tmpUser, httpOptions)
-    return this.http.get<Profile>(url)
-    .pipe(
-      map(returnObj => {
-        let obj = JSON.parse(JSON.stringify(returnObj));
-        console.log('profile object: ' + JSON.stringify(obj));
-        return returnObj;
-        }
-      ),
-    //need catch error statement  
-    )
+    }
 
-}
+getCustomer(id: number): Observable<Profile> {
+  const url = this.vurl + '/' + id;
+  return this.http
+    .get(url)
+    .map((returnObj: Profile) => returnObj )
+    .catch((error: any) => Observable.throw((error)));
+    }
 
   updateCustomer (customer: Profile): Observable<any> {
-    return this.http.put(this.vurl, customer);
+    return this.http
+    .put(this.vurl, customer);
   }
 }

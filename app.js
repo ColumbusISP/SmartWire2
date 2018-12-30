@@ -19,22 +19,22 @@ var hookJWTStrategy = require('./services/passportStrategy');
 var app = express();
 
 var authRouter = require('./routes/auth');
- 
+
 
 // create a write stream (in append mode)
 //var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 // setup the logger
 //app.use(morgan('combined', { stream: accessLogStream }));
+app.use(morgan('combined'));
 
+// http.createServer(function (req, res) {
+//   var done = finalhandler(req, res)
+//   logger(req, res, function (err) {
+//     if (err) return done(err)
 
-http.createServer(function (req, res) {
-  var done = finalhandler(req, res)
-  logger(req, res, function (err) {
-    if (err) return done(err)
-
-  })
-})
+//   })
+// })
 //CORS Middleware
 
 //var cors = require('cors');    

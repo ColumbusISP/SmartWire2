@@ -16,19 +16,13 @@ export class ProfileComponent implements OnInit {
   currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   constructor(protected http: HttpClient, 
-
-    private profileService: ProfileService) { 
-
-    // var id = this.currentUser.id;
-
-    this.profileService.getCustomer(this.currentUser.id)
-      .subscribe(profile => {
-        this.profile = profile;
-        }
-      );
-  }  
+    private profileService: ProfileService) { }  
   ngOnInit() {
+    
+    this.profileService.getCustomer(this.currentUser.id)
+      .subscribe((profile: Profile) => this.profile = profile);
   }
+  
 
   update(): void {
     this.submitted = true;

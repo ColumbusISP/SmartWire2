@@ -41,7 +41,7 @@ var modelOptions = {
 };
 
 // 3: Define the User model.
-var UserModel = db.define('user', userModelDefinition, modelOptions);
+var UserModel = db.define('User', userModelDefinition, modelOptions);
 
 
 // Hashes the password for a user object.
