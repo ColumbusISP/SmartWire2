@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileService } from '../services/customer/profile';
 import { PageHeaderComponent } from './shared/modules/page-header/page-header.component';
+import { ConsumerContextService } from '../services/customer/consumerContext';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PageHeaderComponent } from './shared/modules/page-header/page-header.co
         PageHeaderComponent,
         ProfileComponent],
     providers: [
-        ProfileService
+        ProfileService,
+        ConsumerContextService
     ]
 })
-export class LayoutModule {}
+export class SecureHomeModule {}
