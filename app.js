@@ -25,16 +25,8 @@ var authRouter = require('./routes/auth');
 //var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 // setup the logger
-//app.use(morgan('combined', { stream: accessLogStream }));
 app.use(morgan('combined'));
 
-// http.createServer(function (req, res) {
-//   var done = finalhandler(req, res)
-//   logger(req, res, function (err) {
-//     if (err) return done(err)
-
-//   })
-// })
 //CORS Middleware
 
 //var cors = require('cors');    
@@ -59,9 +51,6 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
-
-//app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use(express.static(path.join(__dirname, 'dist/SmartWire')));
 app.use('/', express.static(path.join(__dirname, 'dist/SmartWire')));
