@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './shared';
+import { AuthGuard } from './secure-home/shared';
 
 const routes: Routes = [
-    { path: '', loadChildren: './public-layout/public-layout.module#PublicLayoutModule' },
-    { path: 'home', loadChildren: './layout/layout.module#LayoutModule', canActivate: [AuthGuard] },
-    { path: 'public-home', loadChildren: './public-layout/public-layout.module#PublicLayoutModule' },
+    { path: '', loadChildren: './public-home/public-layout.module#PublicLayoutModule' },
+    { path: 'home', loadChildren: './secure-home/secure-home.module#LayoutModule', canActivate: [AuthGuard] },
+    { path: 'public-home', loadChildren: './public-home/public-layout.module#PublicLayoutModule' },
     { path: 'login', loadChildren: './login/login.module#LoginModule' },
     { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },
     { path: 'error', loadChildren: './other/server-error/server-error.module#ServerErrorModule' },

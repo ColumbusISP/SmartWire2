@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-layout',
-    templateUrl: './layout.component.html',
-    styleUrls: ['./layout.component.scss']
+    selector: 'app-secure-home',
+    templateUrl: './secure-home.component.html',
+    styleUrls: ['./secure-home.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class SecureHomeComponent implements OnInit {
 
     collapedSideBar: boolean;
 

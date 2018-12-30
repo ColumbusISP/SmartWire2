@@ -1,4 +1,4 @@
-import { LayoutModule } from './layout.module';
+import { LayoutModule } from './secure-home.module';
 
 describe('LayoutModule', () => {
     let layoutModule: LayoutModule;
