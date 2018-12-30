@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { ProfileService } from '../../../services/customer/profile';
 import { Profile } from '../../../models/profile';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-header',
@@ -12,18 +13,15 @@ import { Profile } from '../../../models/profile';
 })
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
-    profile = new Profile();
-    currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    public profile: Profile;
+    // currentProfile: Observable<Profile>;
+    public currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     constructor(private translate: TranslateService, 
         public router: Router,
         private loginService: LoginService,
         private profileService: ProfileService) {
-        
-        this.profileService.getCustomer(this.currentUser.id)
-            .subscribe(profile => {
-                this.profile = profile; });
-  
+
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -42,6 +40,8 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.pushRightClass = 'push-right';
+        this.profileService.getCustomer(this.currentUser.id)
+            .subscribe((profile: Profile) => this.profile = profile);
     }
 
     isToggled(): boolean {

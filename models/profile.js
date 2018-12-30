@@ -1,4 +1,4 @@
-// The User model.
+// The Customer Profile model.
 'use strict'; 
 
 var Sequelize = require('sequelize');
@@ -30,6 +30,6 @@ var profileModelDefinition = {
 };
 
 // 3: Define the User model.
-var ProfileModel = db.define('user', profileModelDefinition);
+var ProfileModel = db.define('User', profileModelDefinition);
 
 module.exports = ProfileModel;
