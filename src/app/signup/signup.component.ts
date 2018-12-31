@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { SignUpService } from '../services/auth/signup.service';
-import { User } from '../models/user';
+import { User } from '../secure-home/models/user';
 
 const API_URL = environment.apiUrl;
 

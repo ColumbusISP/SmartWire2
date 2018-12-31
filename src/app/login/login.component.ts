@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from '../router.animations';
 import { LoginService } from '../services/auth/login.service';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user';
+import { User } from '../secure-home/models/user';
 import { environment } from 'src/environments/environment';
 
 const API_URL = environment.apiUrl;

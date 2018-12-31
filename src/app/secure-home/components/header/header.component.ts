@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/services/auth/login.service';
-import { ProfileService } from '../../../services/customer/profile';
-import { Profile } from '../../../models/profile';
-import { Observable } from 'rxjs';
+import { ContactInfo } from '../../dashboards/profile-dashboard/models/contactinfo';
+import { ConsumerContext } from '../../models/consumerContext';
 
 @Component({
     selector: 'app-header',
@@ -12,15 +11,18 @@ import { Observable } from 'rxjs';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    @Input()
+    consumerContext: ConsumerContext;
+    
+    @Input()
+    profile: ContactInfo;
+    
     public pushRightClass: string;
-    public profile: Profile;
-    // currentProfile: Observable<Profile>;
-    public currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+    
     constructor(private translate: TranslateService, 
         public router: Router,
         private loginService: LoginService,
-        private profileService: ProfileService) {
+        ) {
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
@@ -37,11 +39,10 @@ export class HeaderComponent implements OnInit {
             }
         });
     }
-
+    
     ngOnInit() {
         this.pushRightClass = 'push-right';
-        this.profileService.getCustomer(this.currentUser.id)
-            .subscribe((profile: Profile) => this.profile = profile);
+        
     }
 
     isToggled(): boolean {

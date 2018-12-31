@@ -10,10 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './secure-home/shared';
 import { LoginService } from './services/auth/login.service';
-import { HttpErrorHandler } from './services/http-error-handler.service';
-import { MessageService } from './services/message.service';
+import { HttpErrorHandler } from './services/helpers/http-error-handler.service';
+import { MessageService } from './services/helpers/message.service';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
-import { JwtInterceptor } from './services/jwt.interceptor';
+import { JwtInterceptor } from './services/helpers/jwt.interceptor';
 
 
 // AoT requires an exported function for factories

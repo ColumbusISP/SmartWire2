@@ -8,11 +8,12 @@ import { SecureHomeRoutingModule } from './secure-home-routing.module';
 import { SecureHomeComponent } from './secure-home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
-import { ProfileService } from '../services/customer/profile';
 import { PageHeaderComponent } from './shared/modules/page-header/page-header.component';
+import { ConsumerContextService } from '../secure-home/services/consumerContext';
 
+// Dashbaords
+import { ProfileDashboardModule } from './dashboards/profile-dashboard/profile-dashboard.module';
 
 @NgModule({
     imports: [
@@ -21,16 +22,24 @@ import { PageHeaderComponent } from './shared/modules/page-header/page-header.co
         SecureHomeRoutingModule,
         TranslateModule,
         NgbDropdownModule,
-        HttpModule
+        HttpModule,
+        ProfileDashboardModule
+
     ],
     declarations: [
         SecureHomeComponent, 
         SidebarComponent, 
         HeaderComponent, 
-        PageHeaderComponent,
-        ProfileComponent],
+        PageHeaderComponent
+    ],
     providers: [
-        ProfileService
+        
+        ConsumerContextService
+    ],
+    exports: [
+     
+        PageHeaderComponent
+    
     ]
 })
-export class LayoutModule {}
+export class SecureHomeModule {}
