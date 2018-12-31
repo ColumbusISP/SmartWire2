@@ -1,4 +1,4 @@
-export class Profile {
+export class ContactInfo {
     id: number;
     firstname: string;
     lastname: string;

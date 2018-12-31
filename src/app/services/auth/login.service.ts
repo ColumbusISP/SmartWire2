@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { catchError } from 'rxjs/operators';
-import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
-import { User } from '../../models/user';
+import { HttpErrorHandler, HandleError } from '../helpers/http-error-handler.service';
+import { User } from '../../secure-home/models/user';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 

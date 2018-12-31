@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/services/auth/login.service';
-import { ProfileService } from '../../../services/customer/profile';
-import { Profile } from '../../../models/profile';
-import { ConsumerContextService } from 'src/app/services/customer/consumerContext';
-import { ConsumerContext } from 'src/app/models/consumerContext';
+import { ContactInfo } from '../../dashboards/profile-dashboard/models/contactinfo';
+import { ConsumerContext } from '../../models/consumerContext';
 
 @Component({
     selector: 'app-header',
@@ -13,17 +11,18 @@ import { ConsumerContext } from 'src/app/models/consumerContext';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    @Input()
+    consumerContext: ConsumerContext;
+    
+    @Input()
+    profile: ContactInfo;
+    
     public pushRightClass: string;
-    public profile: Profile;
-    public consumerContext: ConsumerContext;
-    // currentProfile: Observable<Profile>;
-    public currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+    
     constructor(private translate: TranslateService, 
         public router: Router,
         private loginService: LoginService,
-        private profileService: ProfileService,
-        private consumerContextService: ConsumerContextService) {
+        ) {
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
@@ -43,16 +42,7 @@ export class HeaderComponent implements OnInit {
     
     ngOnInit() {
         this.pushRightClass = 'push-right';
-        this.profileService.getCustomer(this.currentUser.id)
-            .subscribe((profile: Profile) => {
-                return this.profile = profile;
-            });
-            
-        this.consumerContextService.getConsumerContext(this.currentUser.id)
-            .subscribe((consumerContext: ConsumerContext) => { 
-                return this.consumerContext = consumerContext[0];
-            });
-            
+        
     }
 
     isToggled(): boolean {

@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 
 import { Observable } from 'rxjs';
-import { Profile } from '../../models/profile';
-import { environment } from '../../../environments/environment';
-import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
+import { ContactInfo } from '../models/contactinfo';
+import { environment } from '../../../../../environments/environment';
+import { HttpErrorHandler, HandleError } from '../../../../services/helpers/http-error-handler.service';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -17,21 +17,21 @@ const API_URL = environment.apiUrl;
 })
 
 @Injectable()
-export class ProfileService {
+export class ContactInfoService {
     private vurl = API_URL + '/api/customer';
     constructor( private http: HttpClient) { 
 
     }
 
-getCustomer(id: number): Observable<Profile> {
+getCustomer(id: number): Observable<ContactInfo> {
   const url = this.vurl + '/' + id;
   return this.http
     .get(url)
-    .map((returnObj: Profile) => returnObj )
+    .map((returnObj: ContactInfo) => returnObj )
     .catch((error: any) => Observable.throw((error)));
     }
 
-  updateCustomer (customer: Profile): Observable<any> {
+  updateCustomer (customer: ContactInfo): Observable<any> {
     return this.http
     .put(this.vurl, customer);
   }
