@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContactInfoComponent } from './components/contact-info/contactinfo.component';
 import { ProfileDashboardComponent } from './containers/profile-dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { SharedCompnentModule } from 'src/app/sharedmodule/shared-component.module';
+import { SharedComponentModule } from 'src/app/sharedmodule/shared-component.module';
 
 
 // import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
@@ -12,7 +12,7 @@ import { SharedCompnentModule } from 'src/app/sharedmodule/shared-component.modu
     imports: [
         CommonModule,
         FormsModule,
-        SharedCompnentModule
+        SharedComponentModule
         
     ],
     declarations: [
