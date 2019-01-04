@@ -1,8 +1,6 @@
-<!-- <app-page-header heading="Contact Information"></app-page-header> -->
+<app-page-header heading="Contact Information"></app-page-header>
 
-<!-- <form #profileForm > -->
-<form  >
-    
+<form #profileForm="ngForm" novalidate>
     <div *ngIf="submitted">Changes Submitted.</div>
     <div *ngIf="submitted==false">
       <div class="row">
@@ -10,9 +8,9 @@
             <label class="control-label">First Name:&nbsp;</label></div>
             <div class="col-xs-6 col-md-4">
             <!-- <input type="text" [(ngModel)]="contactInfo.firstname" #contactInfo.firstname class="form-control" id="firstname" value = "{{contactInfo?.firstname}}"  required name="firstname">  -->
-            <input type="text" [value]="contactInfo?.firstname" 
+            <input type="text" [ngModel]="contactInfo?.firstname" 
               (input)="contactInfo.firstname = $event.target.value" required name="firstname" 
-              value = "{{contactInfo?.firstname}}" class="form-control"> 
+               class="form-control" > 
           </div>
           <div class="col-xs-6 col-md-4"></div>
       </div>
@@ -21,9 +19,9 @@
             <label class="control-label">Last Name:&nbsp;</label>
           </div>
             <div class="col-xs-6 col-md-4">
-                <input type="text" [value]="contactInfo?.lastname" 
+                <input type="text" [ngModel]="contactInfo?.lastname" 
                 (input)="contactInfo.lastname = $event.target.value" required name="lastname" 
-                value = "{{contactInfo?.lastname}}" class="form-control"> 
+                class="form-control"> 
             </div>
           <div class="col-xs-6 col-md-4"></div>
       </div>
@@ -34,16 +32,16 @@
         </label>
       </div>
         <div class="col-xs-6 col-md-4">
-            <input type="text" [value]="contactInfo?.email" 
+            <input type="text" [ngModel]="contactInfo?.email" 
               (input)="contactInfo.email = $event.target.value" required name="email" 
-              value = "{{contactInfo?.email}}" class="form-control"> 
+              class="form-control"> 
         </div>
         <div class="col-xs-6 col-md-4"></div>
       </div>
 
       <div>
-      <!-- <button type="button" class="btn btn-dark" (click)="update()" [disabled]="profileForm.invalid">Update</button> -->
-      <button type="button" class="btn btn-dark" (click)="update()" >Update</button>
+      <button type="submit" class="btn btn-dark" (click)="update()" [disabled]="profileForm.invalid">Update</button>
+      <!-- <button type="button" class="btn btn-dark" (click)="update()" >Update</button> -->
     </div> 
     </div>
 </form>

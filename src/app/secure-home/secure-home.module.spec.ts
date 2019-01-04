@@ -1,10 +1,10 @@
-import { LayoutModule } from './secure-home.module';
+import { SecureHomeModule } from './secure-home.module';
 
 describe('LayoutModule', () => {
-    let layoutModule: LayoutModule;
+    let layoutModule: SecureHomeModule;
 
     beforeEach(() => {
-        layoutModule = new LayoutModule();
+        layoutModule = new SecureHomeModule();
     });
 
     it('should create an instance', () => {
