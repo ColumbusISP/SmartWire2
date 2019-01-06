@@ -4,42 +4,40 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 
+
 import { SecureHomeRoutingModule } from './secure-home-routing.module';
 import { SecureHomeComponent } from './secure-home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormsModule } from '@angular/forms';
-import { PageHeaderComponent } from './shared/modules/page-header/page-header.component';
 import { ConsumerContextService } from '../secure-home/services/consumerContext';
 
 // Dashbaords
 import { ProfileDashboardModule } from './dashboards/profile-dashboard/profile-dashboard.module';
+import { MainDashboardModule } from './dashboards/main-dashboard/main-dashboard.module';
+
 
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule,
         SecureHomeRoutingModule,
         TranslateModule,
         NgbDropdownModule,
         HttpModule,
-        ProfileDashboardModule
+        ProfileDashboardModule,
+        MainDashboardModule
 
     ],
     declarations: [
         SecureHomeComponent, 
         SidebarComponent, 
-        HeaderComponent, 
-        PageHeaderComponent
+        HeaderComponent
     ],
     providers: [
         
         ConsumerContextService
     ],
     exports: [
-     
-        PageHeaderComponent
-    
+         
     ]
 })
 export class SecureHomeModule {}
