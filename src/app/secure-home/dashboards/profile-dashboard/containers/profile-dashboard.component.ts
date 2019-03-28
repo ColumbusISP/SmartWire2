@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ContactInfoService } from '../services/contactinfo';
-import { ContactInfo } from '../models/contactinfo';
+import { ContactInfoService } from '../services/contactinfo-service';
+import { ContactInfo } from '../models/contactinfo-model';
 import 'rxjs/add/operator/map';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { ContactInfo } from '../../models/contactinfo';
+import { ContactInfo } from '../../models/contactinfo-model';
 
 @Component({
   selector: 'app-contactinfo',

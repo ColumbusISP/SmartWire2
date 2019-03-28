@@ -4,6 +4,7 @@ import { SecureHomeComponent } from './secure-home.component';
 
 // must move this to new routing module in profile dashboard
 import { ProfileDashboardComponent } from './dashboards/profile-dashboard/containers/profile-dashboard.component';
+import { ServiceDashboardComponent } from './dashboards/services-dashboard/containers/service-dashboard.component';
 
 const routes: Routes = [
     {
@@ -11,6 +12,7 @@ const routes: Routes = [
         component: SecureHomeComponent,
         children: [
             { path: 'profile', component: ProfileDashboardComponent, pathMatch: 'prefix' },
+            { path: 'services', component: ServiceDashboardComponent, pathMatch: 'prefix' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule'}
         ]
     }

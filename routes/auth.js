@@ -29,7 +29,7 @@ var APIRoutes = function(passport) {
     router.get('/customer/:id', auth, customers.findById);
 
     // Retrieve available services by Id
-    router.get('/consumerServices/:id', auth, consumerServices.getServicesById);
+    router.get('/consumerServices', auth, consumerServices.getServicesById);
 
     // Retrieve Consumer Context services by Id
     router.get('/consumerContext/:id', auth, consumerContext.getContextById);

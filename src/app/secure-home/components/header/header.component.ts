@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/services/auth/login.service';
-import { ContactInfo } from '../../dashboards/profile-dashboard/models/contactinfo';
+import { ContactInfo } from '../../dashboards/profile-dashboard/models/contactinfo-model';
 import { ConsumerContext } from '../../models/consumerContext';
 
 @Component({

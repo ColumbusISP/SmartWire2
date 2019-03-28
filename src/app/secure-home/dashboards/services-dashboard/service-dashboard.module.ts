@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactInfoComponent } from './components/contact-info/contactinfo.component';
-import { ProfileDashboardComponent } from './containers/profile-dashboard.component';
+import { ServiceDashboardComponent } from './containers/service-dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { SharedComponentModule } from '../../../sharedmodule/shared-component.module';
 import { RegistrationService } from '../../services/registrationServices';
@@ -15,15 +14,13 @@ import { RegistrationService } from '../../services/registrationServices';
         
     ],
     declarations: [
-        ContactInfoComponent,
-        ProfileDashboardComponent
-
+        ServiceDashboardComponent  
     ],
     providers: [
         RegistrationService
     ],
     exports: [
-        ProfileDashboardComponent
+        ServiceDashboardComponent
     ]
 })
-export class ProfileDashboardModule {}
+export class ServiceDashboardModule {}
