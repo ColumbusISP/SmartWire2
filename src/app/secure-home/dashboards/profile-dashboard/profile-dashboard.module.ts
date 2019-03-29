@@ -5,6 +5,7 @@ import { ProfileDashboardComponent } from './containers/profile-dashboard.compon
 import { FormsModule } from '@angular/forms';
 import { SharedComponentModule } from '../../../sharedmodule/shared-component.module';
 import { RegistrationService } from '../../services/registrationServices';
+import { ContactInfoService } from './services/contactinfo-service';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RegistrationService } from '../../services/registrationServices';
 
     ],
     providers: [
-        RegistrationService
+        RegistrationService,
+        ContactInfoService
     ],
     exports: [
         ProfileDashboardComponent

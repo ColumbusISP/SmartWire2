@@ -7,15 +7,15 @@ import 'rxjs/add/operator/map';
   selector: 'app-profile-dashboard',
   template: `
   <h3>Services</h3>
-  <div class="row" *ngFor="let item of serviceInfo; let i = index">
-  <div class="col-xs-4 col-md-3">
-  <label> {{ item?.ServiceCategoryName }}  </label></div>
-  <div class="col-xs-4 col-md-3">
-  <label> {{ item?.ServiceName }}  </label></div>
-  <div class="col-xs-4 col-md-3">
-  <label> {{ item?.ServicePrice }}  </label></div>
-  <div class="col-xs-4 col-md-3">
-  <label> {{ item?.ServiceDescription }}  </label></div>
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover table-condensed">
+      <tr  *ngFor="let item of serviceInfo; let i = index">
+        <td>{{ item?.ServiceCategoryName }} </td>
+        <td>{{ item?.ServiceName }}  </td>
+        <td>{{ item?.ServicePrice }}  </td>
+        <td>{{ item?.ServiceDescription }} </td>
+      </tr>
+  </table>
 </div>
     
   `

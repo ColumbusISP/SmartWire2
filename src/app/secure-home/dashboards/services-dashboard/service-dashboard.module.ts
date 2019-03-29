@@ -4,6 +4,7 @@ import { ServiceDashboardComponent } from './containers/service-dashboard.compon
 import { FormsModule } from '@angular/forms';
 import { SharedComponentModule } from '../../../sharedmodule/shared-component.module';
 import { RegistrationService } from '../../services/registrationServices';
+import { ServiceInfoService } from './services/serviceinfo-service';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RegistrationService } from '../../services/registrationServices';
         ServiceDashboardComponent  
     ],
     providers: [
-        RegistrationService
+        RegistrationService,
+        ServiceInfoService
     ],
     exports: [
         ServiceDashboardComponent
