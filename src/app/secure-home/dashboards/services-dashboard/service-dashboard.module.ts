@@ -5,8 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { SharedComponentModule } from '../../../sharedmodule/shared-component.module';
 import { RegistrationService } from '../../services/registrationServices';
 import { ServiceInfoService } from './services/serviceinfo-service';
-
-
+import { ServiceCommonComponent } from './components/service-common/service-common.component';
+import { InternetComponent } from './components/internet/internet.component';
+import { VideoComponent } from './components/video/video.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -15,7 +16,10 @@ import { ServiceInfoService } from './services/serviceinfo-service';
         
     ],
     declarations: [
-        ServiceDashboardComponent  
+        ServiceDashboardComponent,
+        ServiceCommonComponent,
+        InternetComponent,
+        VideoComponent  
     ],
     providers: [
         RegistrationService,
