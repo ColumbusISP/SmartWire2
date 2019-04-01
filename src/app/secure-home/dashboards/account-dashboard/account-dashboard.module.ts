@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedComponentModule } from '../../../sharedmodule/shared-component.module';
 import { RegistrationService } from '../../services/registrationServices';
+import { AccountDashboardComponent } from './containers/account-dashboard.component';
 
 @NgModule({
     imports: [
@@ -12,7 +13,7 @@ import { RegistrationService } from '../../services/registrationServices';
         
     ],
     declarations: [
-         
+        AccountDashboardComponent
     ],
     providers: [
         RegistrationService
@@ -21,4 +22,4 @@ import { RegistrationService } from '../../services/registrationServices';
         
     ]
 })
-export class ServiceDashboardModule {}
+export class ActivityDashboardModule {}

@@ -16,6 +16,7 @@ import { ProfileDashboardModule } from './dashboards/profile-dashboard/profile-d
 import { MainDashboardModule } from './dashboards/main-dashboard/main-dashboard.module';
 import { ServiceDashboardModule } from './dashboards/services-dashboard/service-dashboard.module';
 import { PrivateNavCommonComponent } from './components/private-nav-common/private-nav-common.component';
+import { ActivityDashboardModule } from './dashboards/account-dashboard/account-dashboard.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PrivateNavCommonComponent } from './components/private-nav-common/priva
         HttpModule,
         ProfileDashboardModule,
         ServiceDashboardModule,
-        MainDashboardModule
+        MainDashboardModule,
+        ActivityDashboardModule
 
     ],
     declarations: [

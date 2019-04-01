@@ -11,7 +11,7 @@
             </a>
             <li class="nested" [class.expand]="showMenu === 'account'">
                 <ul class="submenu">
-                    <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Account Overview</span></a>
+                    <li><a routerLink="account" [routerLinkActive]="['router-link-active']"><i class="fa fa-fw fa-angle-right"></i><span>Account Overview</span></a>
                     </li>
                     <li><a href="javascript:void(0)"><i class="fa fa-fw fa-angle-right"></i><span>Current Bill</span></a>
                     </li>

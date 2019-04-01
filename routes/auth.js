@@ -14,6 +14,7 @@ const customers = require('../services/customer/profile/customerprofile');
 const consumerServices = require('../services/customer/consumerServices/consumerServices');
 const consumerContext = require('../services/customer/consumerContext/consumerContext');
 const consumerPurchase = require('../services/customer/consumerServices/consumerPurchase');
+const buildingUnits = require('../services/customer/facilityServices/buildingUnits')
 
 
 var APIRoutes = function(passport) {
@@ -31,7 +32,7 @@ var APIRoutes = function(passport) {
     router.get('/customer/:id', auth, customers.findById);
 
     // Retrieve available services by Id
-    router.get('/consumerServices', auth, consumerServices.getServicesById);
+    router.get('/consumerServices', auth, consumerServices.getConsumerServices);
 
     // Retrieve Consumer Context services by Id
     router.get('/consumerContext/:id', auth, consumerContext.getContextById);
@@ -43,8 +44,12 @@ var APIRoutes = function(passport) {
     router.put('/consumerPurchase', auth, consumerPurchase.purchaseService);
     
     // Retrieve Consumer Context services by Id
-    router.get('/consumerPurchases/:id', consumerPurchase.getPurchasesById);
+    router.get('/consumerPurchases/:id', auth, consumerPurchase.getPurchasesById);
+
+    // Retrieve all building units
+    router.get('/buildingUnitService', auth, buildingUnits.getBuildingUnits);
     
+
     return router;
     
 };
