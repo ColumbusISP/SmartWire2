@@ -4,6 +4,8 @@ var jwt = require('jsonwebtoken');
 var config = require('../../config/db-config');
 var db = require('../database');
 var User = require('../../models/user');
+
+
 var bcrypt = require('bcrypt');
 var returnhelper = require('../returnHelper');
 
@@ -24,7 +26,8 @@ AuthController.signUp = function(req, res) {
         db.sync().then(function() {
             var newUser = {
                 username: req.body.username,
-                password: req.body.password
+                password: req.body.password,
+                email: req.body.email
             };
             return User.create(newUser).then(function() {
                 res.status(200).json(returnhelper.setJSON(SUCCESS,'Reg03'));
@@ -73,5 +76,7 @@ AuthController.authenticateUser = function(req, res, next) {
         });
     }
 }
+
+
 
 module.exports = AuthController;

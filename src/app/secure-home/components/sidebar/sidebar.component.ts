@@ -1,6 +1,8 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { ConsumerContext } from '../../models/consumerContext';
+import { ContactInfo } from '../../dashboards/profile-dashboard/models/contactinfo-model';
 
 @Component({
     selector: 'app-sidebar',
@@ -12,6 +14,11 @@ export class SidebarComponent implements OnInit {
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
+    @Input()
+    consumerContext: ConsumerContext;
+    
+    @Input()
+    profile: ContactInfo;
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {ServiceInfo} from '../../models/serviceinfo-model';
+import { PurchasesInfo } from '../../models/purchasesinfo-model';
+
 
 @Component({
   selector: 'app-service-common',
@@ -9,6 +11,9 @@ import {ServiceInfo} from '../../models/serviceinfo-model';
 export class ServiceCommonComponent implements OnInit {
   @Input() 
   serviceInfo: ServiceInfo;
+
+  @Input()
+  purchases: PurchasesInfo;
 
   @Input() 
   serviceCategory: String;

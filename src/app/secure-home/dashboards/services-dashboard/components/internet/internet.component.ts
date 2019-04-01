@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ServiceInfo } from '../../models/serviceinfo-model';
+import { PurchasesInfo } from '../../models/purchasesinfo-model';
 
 @Component({
   selector: 'app-internet',
@@ -10,6 +11,9 @@ export class InternetComponent implements OnInit {
 
   @Input() 
   serviceInfo: ServiceInfo;
+
+  @Input()
+  purchases: PurchasesInfo;
 
   @Output()
   submit: EventEmitter<ServiceInfo> = new EventEmitter<ServiceInfo>();
