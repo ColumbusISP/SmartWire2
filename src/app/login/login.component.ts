@@ -40,7 +40,7 @@ constructor(
       this.loginService.logout();
       // Deep linking Support
       // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-      this.returnUrl = 'home';
+      this.returnUrl = 'private';
       this.clicked = false;
     }
 

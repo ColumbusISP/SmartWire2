@@ -6,6 +6,7 @@ import { SecureHomeComponent } from './secure-home.component';
 import { ProfileDashboardComponent } from './dashboards/profile-dashboard/containers/profile-dashboard.component';
 import { ServiceDashboardComponent } from './dashboards/services-dashboard/containers/service-dashboard.component';
 import { AccountDashboardComponent } from './dashboards/account-dashboard/containers/account-dashboard.component';
+import { PrivateHomePageComponent } from './private-home-page/private-home-page.component';
 
 const routes: Routes = [
     {
@@ -15,6 +16,7 @@ const routes: Routes = [
             { path: 'profile', component: ProfileDashboardComponent, pathMatch: 'prefix' },
             { path: 'account', component: AccountDashboardComponent, pathMatch: 'prefix' },
             { path: 'services', component: ServiceDashboardComponent, pathMatch: 'prefix' },
+            { path: 'home', component: PrivateHomePageComponent, pathMatch: 'prefix' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule'}
         ]
     }

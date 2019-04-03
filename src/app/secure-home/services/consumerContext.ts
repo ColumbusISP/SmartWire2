@@ -21,15 +21,13 @@ export class ConsumerContextService {
     private vFIurl = API_URL + '/api/facilityInfo';
     private vUIurl = API_URL + '/api/unitInfo';
     
-    constructor( private http: HttpClient) { 
+    constructor( private http: HttpClient) {     }
 
-    }
-
-getConsumerContext(id: number): Observable<ConsumerContext> {
+getConsumerContext(id: number): Observable<ConsumerContext[]> {
   const url = this.vCCurl + '/' + id;
   return this.http
     .get(url)
-    .map((returnObj: ConsumerContext) => returnObj )
+    .map((returnObj: ConsumerContext[]) => returnObj )
     .catch((error: any) => Observable.throw((error)));
     }
 

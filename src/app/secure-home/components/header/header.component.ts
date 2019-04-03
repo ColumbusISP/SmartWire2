@@ -11,8 +11,8 @@ import { ConsumerContext } from '../../models/consumerContext';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    @Input()
-    consumerContext: ConsumerContext;
+    @Input() 
+    consumerContext: ConsumerContext[];
     
     @Input()
     profile: ContactInfo;
@@ -42,7 +42,6 @@ export class HeaderComponent implements OnInit {
     
     ngOnInit() {
         this.pushRightClass = 'push-right';
-        
     }
 
     isToggled(): boolean {

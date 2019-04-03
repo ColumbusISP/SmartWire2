@@ -28,15 +28,15 @@ export class ServiceDashboardComponent implements OnInit {
   constructor(private serviceInfoService: ServiceInfoService) {  }
 
   ngOnInit() {
-    
+    // Get all services available
     this.serviceInfoService.getServices()
       .subscribe((serviceInfo: ServiceInfo) => {
-        console.log('SI: ' + JSON.stringify(serviceInfo));
         return this.serviceInfo = serviceInfo;
       });
       this.getCurrentPurchases();
   }
   getCurrentPurchases () {
+    // Get Historical Purchases
     this.serviceInfoService.getPurchases(this.currentUser.id)
     .subscribe((purchases: PurchasesInfo) => {
       console.log('SIP: ' + JSON.stringify(purchases));
@@ -48,7 +48,7 @@ export class ServiceDashboardComponent implements OnInit {
     
     const now = new Date();
     const ptime =  formatDate(now, 'yyyy-MM-dd hh:mm:ss', 'en-US', '+0000');
-    
+    // Create Purchase Object
     const purchaseInfo = {
       ServiceID : event.ServiceID,
       ServicePrice : event.ServicePrice,
@@ -57,13 +57,14 @@ export class ServiceDashboardComponent implements OnInit {
     };
 
     console.log('SI2 Selected: ' + JSON.stringify(purchaseInfo));
-
+    // Submit Purchase Object
     this.serviceInfoService
       .createPurchase(purchaseInfo)
       .subscribe((data: ServiceInfo) => {
         this.purchase = Object.assign({}, this.purchase, purchaseInfo);
           this.getCurrentPurchases();
           return this.purchase;
-        });   
+        }
+    );   
   }
 }

@@ -49,7 +49,9 @@ var APIRoutes = function(passport) {
     // Retrieve all building units
     router.get('/buildingUnitService', auth, buildingUnits.getBuildingUnits);
     
-
+    // Retrieve all building units
+    router.put('/setBuildingUnitID',  buildingUnits.setUserBuildingUnit);
+    
     return router;
     
 };

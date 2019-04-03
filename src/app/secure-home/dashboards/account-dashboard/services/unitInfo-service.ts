@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-
 const API_URL = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
@@ -17,16 +16,23 @@ const API_URL = environment.apiUrl;
 @Injectable()
 export class UnitInfoService {
     private vUnitUrl = API_URL + '/api/buildingUnitService';
+    private vsetUnitUrl = API_URL + '/api/setBuildingUnitID';
     constructor( private http: HttpClient) { 
-
     }
 
 // getCustomer(id: number): Observable<ServiceInfo> {
-getUnits(): Observable<UnitInfo> {
-  const url = this.vUnitUrl;
-  return this.http
-    .get(url)
-    .map((returnObj: UnitInfo) => returnObj )
-    .catch((error: any) => Observable.throw((error)));
-    }
+  getUnits(): Observable<UnitInfo[]> {
+    const url = this.vUnitUrl;
+    return this.http
+      .get(url)
+      .map((returnObj: UnitInfo[]) => returnObj )
+      .catch((error: any) => Observable.throw((error)));
+      }
+
+
+  setBuildingUnitID (unitInfo: any): Observable<any> {
+    console.log ('BU2: ' + JSON.stringify(unitInfo));
+    return this.http
+    .put(this.vsetUnitUrl, unitInfo);
+  }
 }

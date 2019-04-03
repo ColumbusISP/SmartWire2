@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top" >
-    <a class="navbar-brand" href="#">{{ consumerContext?.ISPName}} </a>
-    <div class="navbar-brand">{{ consumerContext?.BuildingAddress}} - {{ consumerContext?.BuildingUnitIdentifier }} </div>
+    <a class="navbar-brand" href="#">{{ consumerContext[0]?.ISPName }} </a>
+    <div class="navbar-brand">{{ consumerContext[0]?.BuildingAddress }} - {{ consumerContext[0]?.BuildingUnitIdentifier }} </div>
     <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
         <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars text-muted" aria-hidden="true"></i>

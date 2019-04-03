@@ -23,7 +23,6 @@ export class ServiceInfoService {
     private vPurchaseUrl = API_URL + '/api/consumerPurchase';
     private vPurchasesUrl = API_URL + '/api/consumerPurchases';
     constructor( private http: HttpClient) { 
-
     }
 
 // getCustomer(id: number): Observable<ServiceInfo> {

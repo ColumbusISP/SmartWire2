@@ -29,8 +29,6 @@ export const createTranslateLoader = (http: HttpClient) => {
 export function tokenGetter() {
     return localStorage.getItem('token');
   }
-
-
 @NgModule({
     imports: [
         CommonModule,

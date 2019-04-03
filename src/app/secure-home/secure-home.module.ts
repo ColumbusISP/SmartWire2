@@ -10,6 +10,7 @@ import { SecureHomeComponent } from './secure-home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ConsumerContextService } from '../secure-home/services/consumerContext';
+import { PrivateHomePageComponent } from './private-home-page/private-home-page.component';
 
 // Dashbaords
 import { ProfileDashboardModule } from './dashboards/profile-dashboard/profile-dashboard.module';
@@ -17,6 +18,7 @@ import { MainDashboardModule } from './dashboards/main-dashboard/main-dashboard.
 import { ServiceDashboardModule } from './dashboards/services-dashboard/service-dashboard.module';
 import { PrivateNavCommonComponent } from './components/private-nav-common/private-nav-common.component';
 import { ActivityDashboardModule } from './dashboards/account-dashboard/account-dashboard.module';
+
 
 
 @NgModule({
@@ -35,12 +37,10 @@ import { ActivityDashboardModule } from './dashboards/account-dashboard/account-
     declarations: [
         SecureHomeComponent, 
         SidebarComponent, 
-        HeaderComponent, PrivateNavCommonComponent
+        HeaderComponent, PrivateNavCommonComponent, PrivateHomePageComponent
     ],
     providers: [
-        
         ConsumerContextService
-
     ],
     exports: [
          
