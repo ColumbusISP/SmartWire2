@@ -1,0 +1,43 @@
+
+<form #serviceForm="ngForm" novalidate>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover table-sm" >
+        <thead class=thead-dark>
+            <tr>
+              <th style="width: 10%">Select</th>
+              <th style="width: 20%">Service</th>
+              <th style="width: 20%">Price</th>
+              <th style="width: 30%">Description</th>
+            </tr>
+        </thead>
+        <tr  *ngFor="let item of serviceInfo; let i = index">
+          <ng-container *ngIf="item?.ServiceCategoryName==serviceCategory">
+            <td><button class="btn btn-default" (click)="update(item)" type="submit">Select</button></td>
+            <td>{{ item?.ServiceName }}  </td>
+            <td>{{ item?.ServicePrice }}  </td>
+            <td>{{ item?.ServiceDescription }} </td>
+          </ng-container>
+        </tr>
+    </table>
+  </div>
+
+</form>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover table-sm" >
+      <thead class=thead-dark >
+          <tr>
+            <th style="width: 20%">Service Name</th>
+            <th style="width: 10%">Service Price</th>
+            <th style="width: 20%">Purchase Date</th>
+          </tr>
+      </thead>
+      <tr *ngFor="let item of purchases; let i = index">
+        <ng-container *ngIf="item?.ServiceCategoryName==serviceCategory">
+          <td>{{ item?.ServiceName }}  </td>
+          <td>{{ item?.ServicePrice }}  </td>
+          <td>{{ item?.PurchaseTime }} </td>
+        </ng-container>
+      </tr>
+  </table>
+</div>

@@ -14,6 +14,8 @@ import { ConsumerContextService } from '../secure-home/services/consumerContext'
 // Dashbaords
 import { ProfileDashboardModule } from './dashboards/profile-dashboard/profile-dashboard.module';
 import { MainDashboardModule } from './dashboards/main-dashboard/main-dashboard.module';
+import { ServiceDashboardModule } from './dashboards/services-dashboard/service-dashboard.module';
+import { PrivateNavCommonComponent } from './components/private-nav-common/private-nav-common.component';
 
 
 @NgModule({
@@ -24,17 +26,19 @@ import { MainDashboardModule } from './dashboards/main-dashboard/main-dashboard.
         NgbDropdownModule,
         HttpModule,
         ProfileDashboardModule,
+        ServiceDashboardModule,
         MainDashboardModule
 
     ],
     declarations: [
         SecureHomeComponent, 
         SidebarComponent, 
-        HeaderComponent
+        HeaderComponent, PrivateNavCommonComponent
     ],
     providers: [
         
         ConsumerContextService
+
     ],
     exports: [
          

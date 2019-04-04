@@ -7,6 +7,8 @@ import { PublicLayoutRoutingModule } from './public-layout-routing.module';
 import { PublicLayoutComponent } from './public-layout.component';
 import { PublicSidebarComponent } from './components/public-sidebar/public-sidebar.component';
 import { PublicHeaderComponent } from './components/public-header/public-header.component';
+import { PublicNavCommonComponent } from './components/public-nav-common/public-nav-common.component';
+import { PublicHomePageComponent } from './public-home-page/public-home-page.component';
 
 @NgModule({
     imports: [
@@ -15,6 +17,6 @@ import { PublicHeaderComponent } from './components/public-header/public-header.
         TranslateModule,
         NgbDropdownModule
     ],
-    declarations: [PublicLayoutComponent, PublicSidebarComponent, PublicHeaderComponent]
+    declarations: [PublicLayoutComponent, PublicSidebarComponent, PublicHeaderComponent, PublicNavCommonComponent, PublicHomePageComponent]
 })
 export class PublicLayoutModule {}
