@@ -1,3 +1,7 @@
-<p>
-  video works!
-</p>
+<app-page-header heading="Video Services"></app-page-header>
+<app-service-common 
+      [serviceInfo]="serviceInfo"
+      [purchases]="purchases"
+      serviceCategory="Internet"
+      (submit)="relaySubmit($event)">
+</app-service-common>

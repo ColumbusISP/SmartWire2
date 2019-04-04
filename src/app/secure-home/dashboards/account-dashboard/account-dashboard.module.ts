@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedComponentModule } from '../../../sharedmodule/shared-component.module';
 import { RegistrationService } from '../../services/registrationServices';
+import { AccountDashboardComponent } from './containers/account-dashboard.component';
+import { UnitInfoService } from './services/unitInfo-service';
 
 @NgModule({
     imports: [
@@ -12,13 +14,14 @@ import { RegistrationService } from '../../services/registrationServices';
         
     ],
     declarations: [
-         
+        AccountDashboardComponent
     ],
     providers: [
-        RegistrationService
+        RegistrationService,
+        UnitInfoService
     ],
     exports: [
         
     ]
 })
-export class ServiceDashboardModule {}
+export class ActivityDashboardModule {}
