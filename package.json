@@ -29,7 +29,7 @@
     "@ngx-translate/core": "11.0.0",
     "@ngx-translate/http-loader": "4.0.0",
     "angular": "^1.7.5",
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "chart.js": "2.7.3",
     "cookie-parser": "~1.4.3",
